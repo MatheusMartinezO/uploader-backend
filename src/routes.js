@@ -1,36 +1,34 @@
-const routes = require('express').Router();
-const multer = require('multer');
-const multerConfig = require('./config/multer');
+const routes = require("express").Router();
+const multer = require("multer");
+const multerConfig = require("./config/multer");
 
-const Post = require('./models/Post');
+const Post = require("./models/Post");
 
-routes.get('/posts', async(req,res) => {
+routes.get("/posts", async (req, res) => {
+  const posts = await Post.find();
 
- const posts = await Post.find();
-  
   return res.json(posts);
 });
 
-routes.post('/posts', multer(multerConfig).single('file'), async(req,res) => {
-    const {originalname: name, size, key, location: url = ""} = req.file;
+routes.post("/posts", multer(multerConfig).single("file"), async (req, res) => {
+  const { originalname: name, size, key, location: url = "" } = req.file;
 
-    const post = await Post.create({
-        name,
-        size,
-        key,
-        url
-    });
-    return res.json(post)
- });
+  const post = await Post.create({
+    name,
+    size,
+    key,
+    url
+  });
 
- routes.delete('/posts/:id', async (req, res) => {
-    
-    const post = await Post.findById(req.params.id);
+  return res.json(post);
+});
 
-    await post.remove();
+routes.delete("/posts/:id", async (req, res) => {
+  const post = await Post.findById(req.params.id);
 
-    return res.send();
+  await post.remove();
 
- });
+  return res.send();
+});
 
 module.exports = routes;
