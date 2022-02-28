@@ -4,8 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+   "start": "node index"
   },
   "dependencies": {
     "aws-sdk": "^2.1082.0",
