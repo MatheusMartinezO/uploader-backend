@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "projetonodereact",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
@@ -8,16 +8,16 @@
     "start": "node src/index.js"
   },
   "dependencies": {
-    "aws-sdk": "^2.390.0",
-    "dotenv": "^6.2.0",
-    "express": "^4.16.4",
-    "mongoose": "^5.4.5",
-    "morgan": "^1.9.1",
-    "multer": "^1.4.1",
+    "aws-sdk": "^2.1082.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.3",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.4",
     "multer-s3": "^2.9.0"
   },
   "devDependencies": {
     "cors": "^2.8.5",
-    "nodemon": "^1.18.9"
+    "nodemon": "^2.0.15"
   }
 }
