@@ -15,9 +15,7 @@
     "mongoose": "^6.2.3",
     "morgan": "^1.10.0",
     "multer": "^1.4.4",
-    "multer-s3": "^2.9.0",
-    "react-app-rewire-styled-components": "^3.0.2",
-    "styled-components": "^5.3.3"
+    "multer-s3": "^2.9.0"
   },
   "devDependencies": {
     "cors": "^2.8.5",
