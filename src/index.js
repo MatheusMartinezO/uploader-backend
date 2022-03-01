@@ -7,6 +7,16 @@ const path = require('path');
 const cors = require('cors');
 const app = express();
 
+const rewireStyledComponents = require('react-app-rewire-styled-components');
+
+/* config-overrides.js */
+module.exports = function override(config, env) {
+  config = rewireStyledComponents(config, env);
+  return config;
+}
+config = rewireStyledComponents(config, env, {
+  ssr: true,
+})
 /**
  * Database setup
  */
