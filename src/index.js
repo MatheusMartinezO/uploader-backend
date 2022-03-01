@@ -22,6 +22,8 @@ mongoose.connect(
 app.use((req,res,next) => {
   res.header("Access-Control-Allow-Origin","*")
   res.header('Access-Control-Allow-Methods','*')
+  res.header('Access-Control-Allow-Headers','*')
+  res.header('Access-Control-Max-Age','86400')
   app.use(cors());
   next();
 })
